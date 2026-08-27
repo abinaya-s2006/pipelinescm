@@ -1,6 +1,11 @@
 pipeline{
     agent any
     stages{
+        stage('git'){
+            steps{
+                git credentialsId: 'githup_creds', url: 'https://github.com/abinaya-s2006/pipelinescm.git'
+             }
+        }
         stage('build'){
             steps{
                 echo "python start"
